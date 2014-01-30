@@ -1,0 +1,29 @@
+<h1>Listing musicvideos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @musicvideos.each do |musicvideo| %>
+      <tr>
+        <td><%= musicvideo.title %></td>
+        <td><%= musicvideo.artist %></td>
+        <td><%= link_to 'Show', musicvideo %></td>
+        <td><%= link_to 'Edit', edit_musicvideo_path(musicvideo) %></td>
+        <td><%= link_to 'Destroy', musicvideo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Musicvideo', new_musicvideo_path %>
